@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1742302007 source:c:\users\nguar\desktop\facultad\primerproyectoprogramacion\pila.c
+	"pila.h"
+
+1742302007 c:\users\nguar\desktop\facultad\primerproyectoprogramacion\pila.h
+	<stdio.h>
+	<malloc.h>
+
