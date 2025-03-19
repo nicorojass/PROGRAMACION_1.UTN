@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1742289154 source:c:\users\usuario\desktop\tp2\pila.c
+	"pila.h"
+
+1742289154 c:\users\usuario\desktop\tp2\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1742344363 source:c:\users\usuario\desktop\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"pila.h"
+	<time.h>
+
+1742424031 source:c:\users\usuario\desktop\progra.utn-cuatrimestre1-main\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"pila.h"
+	<time.h>
+
+1742330096 c:\users\usuario\desktop\progra.utn-cuatrimestre1-main\tp2\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1742330096 source:c:\users\usuario\desktop\progra.utn-cuatrimestre1-main\tp2\pila.c
+	"pila.h"
+
