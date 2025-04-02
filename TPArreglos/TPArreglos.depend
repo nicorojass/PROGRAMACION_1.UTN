@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1743467958 source:c:\users\usuario\desktop\tparreglos\main.c
+1743550256 source:c:\users\usuario\desktop\tparreglos\main.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
 
-1743014714 c:\users\usuario\desktop\tparreglos\pila.h
+1743453668 c:\users\usuario\desktop\tparreglos\pila.h
 	<stdio.h>
 	<malloc.h>
 
-1743014714 source:c:\users\usuario\desktop\tparreglos\pila.c
+1743453668 source:c:\users\usuario\desktop\tparreglos\pila.c
 	"pila.h"
 
