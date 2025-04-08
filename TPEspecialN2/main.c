@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "pila.h"
 
-#define DIM 100
+#define DIM 50
+#define ESC 27
 
 int cargarNotasRandom(int notas[], int dim);
 void mostrarNotas(int notas[], int validos);
@@ -11,21 +13,75 @@ int main()
 {
     srand(time(NULL));
 
+    Pila pilaNotas;
+    inicpila(&pilaNotas);
     int notas[DIM];
     int vNotas = 0;
+    char opcion;
 
-    vNotas = cargarNotasManual(notas, vNotas, DIM);
-    mostrarNotas(notas, vNotas);
-    printf("\nLa nota menor es: %d", buscarMenor(notas, vNotas));
-    printf("\nLa nota mayor es: %d", buscarMayor(notas, vNotas));
-    printf("\nEl promedio de los elementos es: %d", promedioNotas(notas, vNotas));
+    do{
+        opcionesMenu();
+        opcion = getch();
+
+        switch(opcion){
+            case 49:
+                system("cls");
+                vNotas = cargarNotasRandom(notas, DIM);
+                break;
+            case 50:
+                system("cls");
+                vNotas = cargarNotasManual(notas, vNotas, DIM);
+                break;
+            case 51:
+                system("cls");
+                break;
+            case 52:
+                system("cls");
+                mostrarNotas(notas, vNotas);
+                break;
+            case 53:
+                system("cls");
+                printf("La nota mas alta es: %d\n", buscarMayor(notas, vNotas));
+                break;
+            case 54:
+                system("cls");
+                printf("La nota mas baja es: %d\n", buscarMenor(notas, vNotas));
+                break;
+            case 55:
+                system("cls");
+                printf("El promedio de todas las notas es: %d\n", promedioNotas(notas, vNotas));
+                break;
+            case 56:
+                system("cls");
+                copiaArregloEnPila(notas, vNotas, &pilaNotas);
+                mostrar(&pilaNotas);
+                break;
+        }
+        system("pause");
+        system("cls");
+    }while (opcion != ESC);
+
     return 0;
+}
+
+void opcionesMenu(){
+    printf("\t \t \t Menu de opciones\n");
+    printf("1: Cargar notas random\n");
+    printf("2: Cargar notas manual\n");
+    printf("3: Ordenar notas\n");
+    printf("4: Mostrar notas\n");
+    printf("5: Nota maxima\n");
+    printf("6: Nota minima\n");
+    printf("7: Promedio de notas\n");
+    printf("8: Copiar aprobados en Pila\n");
+    printf("ESC para salir...\n");
+
 }
 
 int cargarNotasRandom(int notas[], int dim){
     int i = 0;
     for (i = 0; i < dim; i++){
-        notas[i] = rand() % 10;
+        notas[i] = rand() % 11;
     }
     return i;
 }
@@ -79,7 +135,7 @@ int buscarMayor(int arr[], int validos){
 }
 
 int promedioNotas(int arr[], int validos){
-    int prom;
+    int prom = 0;
     int i;
 
     for (i = 0; i < validos; i++){
@@ -87,4 +143,12 @@ int promedioNotas(int arr[], int validos){
     }
 
     return prom / validos;
+}
+
+void copiaArregloEnPila(int arr[], int validos, Pila *p){
+
+    for (int i = 0; i < validos; i++){
+        if(arr[i] > 6)
+            apilar(p, arr[i]);
+    }
 }
