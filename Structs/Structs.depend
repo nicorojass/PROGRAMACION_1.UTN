@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1746575531 source:c:\users\usuario\desktop\structs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"stAlumno.h"
+	"mocks.h"
+
+1746574031 source:c:\users\usuario\desktop\structs\stalumno.c
+	"stAlumno.h"
+
+1746573949 c:\users\usuario\desktop\structs\stalumno.h
+	<stdio.h>
+	<stdlib.h>
+
+1746575572 c:\users\usuario\desktop\structs\mocks.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stAlumno.h"
+
+1746576268 source:c:\users\usuario\desktop\structs\mocks.c
+	"mocks.h"
+
