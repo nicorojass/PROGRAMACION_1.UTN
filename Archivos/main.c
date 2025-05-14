@@ -98,7 +98,32 @@ int ultimoId(char nombreArchivo[]){
     return ultID;
 }
 
+int buscaDniArchivo(char nombreArchivo[], char dni[]){
+    int encontrado = 0;
+    stAlumno a;
+    FILE *archi = fopen(nombreArchivo, "rb");
+    if(archi){
+        while (fread(&a, sizeof(stAlumno),1, archi) > 0 && encontrado == 0){
+            if (strcmp(dni, a.dni) == 0)
+                encontrado = 1;
+        }
+        fclose(archi);
+    }
+    return encontrado;
+}
 
-
+stAlumno buscaAlumnoDni(char nombrearchivo[], char dni[]){
+    int encontrado = 0;
+    stAlumno a;
+    FILE *archi = fopen(nombreArchivo, "rb");
+    if(archi){
+        while (encontrado == 0 && fread(&a, sizeof(stAlumno),1, archi) > 0){
+            if (strcmp(dni, a.dni) == 0)
+                encontrado = 1;
+        }
+        fclose(archi);
+    }
+    return a;
+}
 
 
